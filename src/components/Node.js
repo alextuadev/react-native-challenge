@@ -5,6 +5,7 @@ import colors from "../constants/colors";
 import { Paper, Subtitle, BodyText, Caption } from "material-bread";
 import { Expander } from "./Expander";
 import Status from "./Status";
+import Blocks from "./Blocks";
 
 const Node = ({ node, expanded, toggleNodeExpanded }) => (
   <TouchableOpacity onPress={() => toggleNodeExpanded(node)}>
@@ -24,9 +25,8 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => (
       />
       <Expander expanded={expanded} style={styles.icon(expanded)} />
       {expanded && (
-        <View style={styles.heading}>
-          <BodyText type={1} text={"Blocks go here"} />
-        </View>
+        <Blocks
+          node={node} />
       )}
     </Paper>
   </TouchableOpacity>
